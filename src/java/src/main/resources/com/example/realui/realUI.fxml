@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.realui.HelloController">
+    <children>
+      <SplitPane dividerPositions="0.7575757575757576" layoutX="1.0" layoutY="23.0" orientation="VERTICAL" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="388.0" prefWidth="598.0">
+               <children>
+                  <SplitPane dividerPositions="0.4196675900277008" layoutX="-2.0" layoutY="109.0" orientation="VERTICAL" prefHeight="416.0" prefWidth="643.0" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane fx:id="filePane" minHeight="0.0" minWidth="0.0" onDragDetected="#fc3" prefHeight="118.0" prefWidth="559.0">
+                           <children>
+                               <Label layoutX="20.0" layoutY="18.0" text="Project Name" />
+                               <TextField fx:id="projectName" layoutX="20.0" layoutY="43.0" prefHeight="26.0" prefWidth="109.0" />
+                               <Label layoutX="182.0" layoutY="18.0" text="Forward Reads" />
+                               <TextField fx:id="forwardReads" layoutX="273.0" layoutY="13.0" prefHeight="26.0" prefWidth="236.0" />
+                               <Label layoutX="183.0" layoutY="48.0" text="Reverse Reads" />
+                               <TextField fx:id="reverseReads" layoutX="273.0" layoutY="44.0" prefHeight="26.0" prefWidth="236.0" />
+                              <Button fx:id="frbtn" layoutX="518.0" layoutY="13.0" mnemonicParsing="false" onAction="#fc1" prefHeight="0.0" prefWidth="57.0" text="Files..." />
+                              <Button fx:id="rrbtn" layoutX="518.0" layoutY="44.0" mnemonicParsing="false" onAction="#fc2" prefHeight="0.0" prefWidth="57.0" text="Files..." />
+                              <Label layoutX="209.0" layoutY="78.0" text="Seed" />
+                              <TextField fx:id="seed" layoutX="273.0" layoutY="75.0" prefHeight="26.0" prefWidth="236.0" />
+                              <Button fx:id="sbtn" layoutX="518.0" layoutY="74.0" mnemonicParsing="false" onAction="#fc3" prefHeight="0.0" prefWidth="57.0" text="Files..." />
+                              <Label layoutX="19.0" layoutY="109.0" text="Save" />
+                              <TextField fx:id="save" layoutX="55.0" layoutY="106.0" prefHeight="26.0" prefWidth="287.0" />
+                              <Button fx:id="svbtn" layoutX="349.0" layoutY="107.0" mnemonicParsing="false" onAction="#dc" text="Directories..." />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="271.0" prefWidth="641.0">
+                           <children>
+                              <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kmer" />
+                              <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voting Rate" />
+                              <Text layoutX="14.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min Contig" />
+                              <CheckBox fx:id="log" layoutX="14.0" layoutY="160.0" mnemonicParsing="false" text="Log">
+                                 <tooltip>
+                                    <Tooltip text="Whether generate log files" />
+                                 </tooltip></CheckBox>
+                              <Text layoutX="13.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max OutputNum" />
+                              <Text layoutX="11.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Standard Overlap" />
+                              <Text layoutX="320.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-t" />
+                              <Text layoutX="320.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-m" />
+                              <Text layoutX="320.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-e" />
+                              <Text layoutX="320.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-v" />
+                              <Text layoutX="320.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-x" />
+                              <TextField fx:id="kmer" layoutX="136.0" layoutY="8.0" prefHeight="26.0" prefWidth="109.0" promptText="39">
+                                 <tooltip>
+                                    <Tooltip text="Odd Number Only;The length of clips that used for splicing " />
+                                 </tooltip></TextField>
+                              <TextField fx:id="votingRate" layoutX="136.0" layoutY="38.0" prefHeight="19.0" prefWidth="109.0" promptText="0.6">
+                                 <tooltip>
+                                    <Tooltip text="Voting Rate" />
+                                 </tooltip></TextField>
+                              <TextField fx:id="minContig" layoutX="136.0" layoutY="68.0" prefHeight="19.0" prefWidth="109.0" promptText="0">
+                                 <tooltip>
+                                    <Tooltip text="设置打印的contig的最小长度，默认为全都打印" />
+                                 </tooltip></TextField>
+                              <TextField fx:id="maxContig" layoutX="136.0" layoutY="98.0" prefHeight="19.0" prefWidth="109.0" promptText="99999">
+                                 <tooltip>
+                                    <Tooltip text="设置打印的contig的最大数量，默认为全部打印" />
+                                 </tooltip></TextField>
+                              <TextField fx:id="standardOverlap" layoutX="136.0" layoutY="128.0" prefHeight="19.0" prefWidth="109.0" promptText="18">
+                                 <tooltip>
+                                    <Tooltip text="tooltip std over" />
+                                 </tooltip></TextField>
+                              <TextField fx:id="_t" layoutX="368.0" layoutY="8.0" prefHeight="26.0" prefWidth="109.0" promptText="5">
+                                 <tooltip>
+                                    <Tooltip text="Tooltip -t" />
+                                 </tooltip></TextField>
+                              <TextField fx:id="_m" layoutX="368.0" layoutY="38.0" prefHeight="19.0" prefWidth="109.0" promptText="16">
+                                 <tooltip>
+                                    <Tooltip text="Tooltip -m" />
+                                 </tooltip></TextField>
+                              <TextField fx:id="_e" layoutX="368.0" layoutY="68.0" prefHeight="19.0" prefWidth="109.0" promptText="0">
+                                 <tooltip>
+                                    <Tooltip text="Tooltip -e" />
+                                 </tooltip></TextField>
+                              <TextField fx:id="_v" layoutX="368.0" layoutY="98.0" prefHeight="19.0" prefWidth="109.0" promptText="3">
+                                 <tooltip>
+                                    <Tooltip text="Tooltip -v" />
+                                 </tooltip></TextField>
+                              <TextField fx:id="_x" layoutX="368.0" layoutY="128.0" prefHeight="19.0" prefWidth="109.0" promptText="99999">
+                                 <tooltip>
+                                    <Tooltip text="Tooltip -x" />
+                                 </tooltip></TextField>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.18875838926174496" prefHeight="114.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="run" layoutX="27.0" layoutY="44.0" mnemonicParsing="false" onAction="#Run" prefHeight="112.0" prefWidth="109.0" text="RUN" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="104.0" prefWidth="479.0">
+                           <children>
+                              <ListView fx:id="list" layoutX="14.0" layoutY="6.0" prefHeight="102.0" prefWidth="450.0" />
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

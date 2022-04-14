@@ -1,0 +1,1 @@
+EXE_DIR = C:/Users/wayshower/Desktop/MyAssembler/bin/Release/MyAssembler.exe
